@@ -10,30 +10,21 @@ using System.Windows.Forms;
 
 namespace Content_Pwd
 {
-    public partial class FrmMain : Form
+    public partial class FrmCreate : Form
     {
-        public FrmMain()
+        public FrmCreate()
         {
             InitializeComponent();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-            PicLogo.Select();
-        }
-
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            PicLogo.Select();
-            FrmCreate frmCreate = new FrmCreate();
-            frmCreate.ShowDialog();
+
         }
 
         private void BtnRead_Click(object sender, EventArgs e)
         {
-            PicLogo.Select();
-            FrmRead frmRead = new FrmRead();
-            frmRead.ShowDialog();
+
         }
 
         private void BtnLeave_Click(object sender, EventArgs e)
@@ -41,9 +32,10 @@ namespace Content_Pwd
             Close();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void BtnView_Click(object sender, EventArgs e)
         {
-            Application.ExitThread();
+            if (txtPassword.UseSystemPasswordChar) txtPassword.UseSystemPasswordChar = false;
+            else txtPassword.UseSystemPasswordChar = true;
         }
     }
 }
