@@ -17,6 +17,33 @@ namespace Content_Pwd
             InitializeComponent();
         }
 
+        private void FrmCreate_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtPassword_GotFocus(object sender, EventArgs e)
+        {
+            if (LblPlaceholder.Visible == true) LblPlaceholder.Visible = false;
+            TxtPassword.Select();
+        }
+
+        private void TxtPassword_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtPassword.Text))
+            {
+                TxtPassword.Text = string.Empty;
+                LblPlaceholder.Visible = true;
+            }
+        }
+
+        private void BtnView_Click(object sender, EventArgs e)
+        {
+            PicLogo.Select();
+            if (TxtPassword.UseSystemPasswordChar) TxtPassword.UseSystemPasswordChar = false;
+            else TxtPassword.UseSystemPasswordChar = true;
+        }
+
         private void BtnCreate_Click(object sender, EventArgs e)
         {
 
@@ -30,12 +57,6 @@ namespace Content_Pwd
         private void BtnLeave_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void BtnView_Click(object sender, EventArgs e)
-        {
-            if (txtPassword.UseSystemPasswordChar) txtPassword.UseSystemPasswordChar = false;
-            else txtPassword.UseSystemPasswordChar = true;
         }
     }
 }
