@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Database.cs" />
+    <Compile Include="Classes\Data.cs" />
     <Compile Include="FrmRead.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,9 +103,7 @@
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\View.png" />
   </ItemGroup>
