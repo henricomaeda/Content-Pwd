@@ -37,21 +37,77 @@ namespace Content_Pwd
             }
         }
 
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            var c = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+            var r = new Random();
+            var p = string.Empty;
+
+            for (int i = 0; i < 20; i++) p += c[r.Next(0, c.Length)];
+
+            TxtPassword.Text = p;
+            TxtPassword_GotFocus(sender, e);
+            PicLogo.Select();
+        }
+
         private void BtnView_Click(object sender, EventArgs e)
         {
             PicLogo.Select();
-            if (TxtPassword.UseSystemPasswordChar) TxtPassword.UseSystemPasswordChar = false;
-            else TxtPassword.UseSystemPasswordChar = true;
+            if (TxtPassword.UseSystemPasswordChar)
+            {
+                TxtPassword.UseSystemPasswordChar = false;
+                BtnView.Text = "Esconder";
+            }
+            else
+            {
+                TxtPassword.UseSystemPasswordChar = true;
+                BtnView.Text = "Revelar";
+            }
         }
 
-        private void BtnCreate_Click(object sender, EventArgs e)
+        private void BtnCreateAndRead_Click(object sender, EventArgs e)
         {
+            var t = "Por favor, preencha os campos obrigatórios.\n\nCampos obrigatórios geralmente possuem * em vermelho.";
+            var c = string.Empty;
+            var b = MessageBoxButtons.OK;
+            var i = MessageBoxIcon.Exclamation;
 
-        }
+            var s = TxtSubject.Text;
+            var co = TxtContent.Text;
+            var p = TxtPassword.Text;
 
-        private void BtnRead_Click(object sender, EventArgs e)
-        {
+            PicLogo.Select();
+            if (string.IsNullOrWhiteSpace(p)) p = string.Empty;
+            if (string.IsNullOrWhiteSpace(s)) MessageBox.Show(t, c, b, i);
+            else if (string.IsNullOrWhiteSpace(co)) MessageBox.Show(t, c, b, i);
+            else if (p.Contains(' '))
+            {
+                t = "Por favor, apague os espaços inseridos.\n\nO campo de senha não deve conter espaços.";
+                MessageBox.Show(t, c, b, i);
+            }
+            else
+            {
+                try
+                {
+                    if (sender == BtnCreate)
+                    {
 
+                    }
+                    else if (sender == BtnRead)
+                    {
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    t = "ERRO: " + ex.Message;
+                    i = MessageBoxIcon.Error;
+                }
+                finally
+                {
+                    MessageBox.Show(t, c, b, i);
+                }
+            }
         }
 
         private void BtnLeave_Click(object sender, EventArgs e)

@@ -73,6 +73,16 @@ namespace Content_Pwd.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Generate {
+            get {
+                object obj = ResourceManager.GetObject("Generate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Leave {
             get {
                 object obj = ResourceManager.GetObject("Leave", resourceCulture);
