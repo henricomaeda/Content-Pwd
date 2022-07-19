@@ -37,11 +37,10 @@ namespace Content_Pwd
                     var p = Properties.Resources.Password;
                     var s = Classes.Database.subject[i];
 
-                    if (i == 0) u = Properties.Resources.Disabled_Up;
-                    else if (i == 0 && i == (Classes.Database.id.Length - 1))
+                    if (i == 0)
                     {
                         u = Properties.Resources.Disabled_Up;
-                        d = Properties.Resources.Disabled_Down;
+                        if (Classes.Database.id.Length == 1) d = Properties.Resources.Disabled_Down;
                     }
                     else if (i == (Classes.Database.id.Length - 1)) d = Properties.Resources.Disabled_Down;
 
@@ -53,6 +52,20 @@ namespace Content_Pwd
             DgvContent.ClearSelection();
         }
 
+        private int DgvContent_Verify(string p = null)
+        {
+            if (string.IsNullOrWhiteSpace(p)) p = string.Empty;
+            int i = 0;
+
+            if (p != string.Empty)
+            {
+                if (TxtPassword.Text == string.Empty) i = 1;
+                else if (TxtPassword.Text != p) i = 2;
+            }
+
+            return i;
+        }
+
         private void DgvContent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DgvContent.ClearSelection();
@@ -62,7 +75,7 @@ namespace Content_Pwd
 
             if (r > -1 && c > -1)
             {
-                var v = DgvContent.Rows[r].Cells[c].Value;
+                var p = Classes.Database.password[r];
                 Classes.Data.selected_id = r;
 
                 if (c == 1)
@@ -77,15 +90,87 @@ namespace Content_Pwd
                 }
                 else if (c == 5)
                 {
-                    MessageBox.Show("Alterar");
+                    var t = "Por favor, verifique se a senha está correta.";
+                    var ca = string.Empty;
+                    var b = MessageBoxButtons.OK;
+                    var i = MessageBoxIcon.Error;
+
+                    if (DgvContent_Verify(p) == 0)
+                    {
+                        FrmCreate frmCreate = new FrmCreate();
+                        frmCreate.ShowDialog();
+                        DgvContent_Load();
+                        DgvContent.Select();
+                    }
+                    else if (DgvContent_Verify(p) == 1)
+                    {
+                        t = "Este conteúdo é protegido por senha.\n\nPor favor, entre com uma senha no campo abaixo.";
+                        i = MessageBoxIcon.Warning;
+
+                        MessageBox.Show(t, ca, b, i);
+                    }
+                    else if (DgvContent_Verify(p) == 2) MessageBox.Show(t, ca, b, i);
                 }
                 else if (c == 6)
                 {
-                    MessageBox.Show("Remover");
+                    var t = "Você tem certeza que deseja remover o conteúdo?";
+                    var ca = string.Empty;
+                    var b = MessageBoxButtons.YesNo;
+                    var i = MessageBoxIcon.Question;
+
+                    if (DgvContent_Verify(p) == 0)
+                    {
+                        DialogResult re = MessageBox.Show(t, ca, b, i);
+                        if (re == DialogResult.Yes)
+                        {
+                            t = "O conteúdo foi removido com sucessso!";
+                            ca = Classes.Database.subject[r];
+                            b = MessageBoxButtons.OK;
+                            i = MessageBoxIcon.Information;
+
+                            Classes.Database.Delete();
+                            MessageBox.Show(t, ca, b, i);
+                            DgvContent_Load();
+                        }
+                    }
+                    else if (DgvContent_Verify(p) == 1)
+                    {
+                        t = "Por favor, entre com uma senha no campo abaixo.";
+                        b = MessageBoxButtons.OK;
+                        i = MessageBoxIcon.Warning;
+
+                        MessageBox.Show(t, ca, b, i);
+                    }
+                    else if (DgvContent_Verify(p) == 2)
+                    {
+                        t = "Por favor, verifique se a senha está correta.";
+                        b = MessageBoxButtons.OK;
+                        i = MessageBoxIcon.Error;
+
+                        MessageBox.Show(t, ca, b, i);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("ID: " + r.ToString());
+                    var t = Classes.Database.content[r];
+                    var ca = Classes.Database.subject[r];
+                    var b = MessageBoxButtons.OK;
+                    var i = MessageBoxIcon.Information;
+
+                    if (DgvContent_Verify(p) == 1)
+                    {
+                        t = "Este conteúdo é protegido por senha.\n\nPor favor, entre com uma senha no campo abaixo.";
+                        ca = string.Empty;
+                        i = MessageBoxIcon.Warning;
+                    }
+                    else if (DgvContent_Verify(p) == 2)
+                    {
+                        t = "Por favor, verifique se a senha está correta.";
+                        ca = string.Empty;
+                        i = MessageBoxIcon.Error;
+                    }
+
+                    MessageBox.Show(t, ca, b, i);
                 }
             }
         }

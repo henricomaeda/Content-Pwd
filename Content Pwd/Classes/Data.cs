@@ -24,6 +24,8 @@ namespace Content_Pwd.Classes
                 Database.subject[selected_id] = s;
                 Database.content[selected_id] = c;
                 Database.password[selected_id] = p;
+
+                Database.Save();
             }
         }
 
@@ -42,6 +44,8 @@ namespace Content_Pwd.Classes
                 Database.subject[selected_id] = s;
                 Database.content[selected_id] = c;
                 Database.password[selected_id] = p;
+
+                Database.Save();
             }
         }
 

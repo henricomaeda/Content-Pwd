@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -24,6 +25,10 @@ namespace Content_Pwd
                     TxtPassword.Text = p;
                     PicLogo.Select();
                 }
+
+                BtnUpdate.Enabled = true;
+                BtnCreate.Enabled = false;
+                BtnCreate.BackColor = Color.Gray;
             }
         }
 
@@ -62,7 +67,7 @@ namespace Content_Pwd
             else TxtPassword.UseSystemPasswordChar = true;
         }
 
-        private void BtnCreateAndRead_Click(object sender, EventArgs e)
+        private void BtnCreateAndUpdate_Click(object sender, EventArgs e)
         {
             var t = "Por favor, preencha os campos obrigatórios.\n\nCampos obrigatórios geralmente possuem * em vermelho.";
             var c = string.Empty;
@@ -98,9 +103,9 @@ namespace Content_Pwd
                         t = "O conteúdo foi anotado com sucesso!\n\nAssunto: " + s;
                         i = MessageBoxIcon.Information;
                     }
-                    else if (sender == BtnRead)
+                    else if (sender == BtnUpdate)
                     {
-                        Classes.Database.Update(Classes.Data.selected_id, s, co, p);
+                        Classes.Database.Update(s, co, p);
 
                         t = "O conteúdo foi atualizado com sucesso!\n\nAssunto: " + s;
                         i = MessageBoxIcon.Information;

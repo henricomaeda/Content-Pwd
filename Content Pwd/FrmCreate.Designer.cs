@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnGenerate = new System.Windows.Forms.Button();
             this.BtnLeave = new System.Windows.Forms.Button();
-            this.BtnRead = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
             this.BtnCreate = new System.Windows.Forms.Button();
             this.BtnView = new System.Windows.Forms.Button();
             this.PicLogo = new System.Windows.Forms.PictureBox();
@@ -193,22 +193,22 @@
             this.BtnLeave.UseVisualStyleBackColor = true;
             this.BtnLeave.Click += new System.EventHandler(this.BtnLeave_Click);
             // 
-            // BtnRead
+            // BtnUpdate
             // 
-            this.BtnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnRead.Enabled = false;
-            this.BtnRead.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnRead.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRead.Image = global::Content_Pwd.Properties.Resources.Update;
-            this.BtnRead.Location = new System.Drawing.Point(273, 546);
-            this.BtnRead.Name = "BtnRead";
-            this.BtnRead.Size = new System.Drawing.Size(238, 76);
-            this.BtnRead.TabIndex = 9;
-            this.BtnRead.Text = "ATUALIZAR";
-            this.BtnRead.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnRead.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnRead.UseVisualStyleBackColor = true;
-            this.BtnRead.Click += new System.EventHandler(this.BtnCreateAndRead_Click);
+            this.BtnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnUpdate.Enabled = false;
+            this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnUpdate.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdate.Image = global::Content_Pwd.Properties.Resources.Update;
+            this.BtnUpdate.Location = new System.Drawing.Point(273, 546);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(238, 76);
+            this.BtnUpdate.TabIndex = 9;
+            this.BtnUpdate.Text = "ATUALIZAR";
+            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnCreateAndUpdate_Click);
             // 
             // BtnCreate
             // 
@@ -227,7 +227,7 @@
             this.BtnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCreate.UseVisualStyleBackColor = false;
-            this.BtnCreate.Click += new System.EventHandler(this.BtnCreateAndRead_Click);
+            this.BtnCreate.Click += new System.EventHandler(this.BtnCreateAndUpdate_Click);
             // 
             // BtnView
             // 
@@ -270,7 +270,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblPlaceholder);
             this.Controls.Add(this.BtnLeave);
-            this.Controls.Add(this.BtnRead);
+            this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.BtnView);
             this.Controls.Add(this.TxtPassword);
@@ -301,7 +301,7 @@
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label LblPassword;
         private System.Windows.Forms.Button BtnLeave;
-        private System.Windows.Forms.Button BtnRead;
+        private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.Button BtnView;
         private System.Windows.Forms.Label LblPlaceholder;
