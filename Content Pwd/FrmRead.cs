@@ -21,10 +21,35 @@ namespace Content_Pwd
         private void FrmRead_Load(object sender, EventArgs e)
         {
             PicLogo.Select();
-            DgvContent.Rows.Add(0, "Assunto 1...", Properties.Resources.Password);
-            DgvContent.Rows.Add(1, "Assunto 2...");
-            DgvContent.Rows.Add(2, "Assunto 3...", Properties.Resources.Password);
-            DgvContent.Rows.Add(3, "Assunto 4...");
+            DgvContent_Load();
+            DgvContent.ClearSelection();
+        }
+
+        private void DgvContent_Load()
+        {
+            DgvContent.Rows.Clear();
+            if (Classes.Database.id != null)
+            {
+                for (int i = 0; i < Classes.Database.id.Length; i++)
+                {
+                    var u = Properties.Resources.Up;
+                    var d = Properties.Resources.Down;
+                    var p = Properties.Resources.Password;
+                    var s = Classes.Database.subject[i];
+
+                    if (i == 0) u = Properties.Resources.Disabled_Up;
+                    else if (i == 0 && i == (Classes.Database.id.Length - 1))
+                    {
+                        u = Properties.Resources.Disabled_Up;
+                        d = Properties.Resources.Disabled_Down;
+                    }
+                    else if (i == (Classes.Database.id.Length - 1)) d = Properties.Resources.Disabled_Down;
+
+                    if (Classes.Database.password[i] == string.Empty) p = null;
+                    DgvContent.Rows.Add(i, u, d, s, p);
+                }
+            }
+
             DgvContent.ClearSelection();
         }
 
@@ -34,19 +59,34 @@ namespace Content_Pwd
 
             var r = e.RowIndex;
             var c = e.ColumnIndex;
-            var cell = DgvContent.Rows[r].Cells[c].Value;
 
-            if (c == 3)
+            if (r > -1 && c > -1)
             {
-                MessageBox.Show("Alterar");
-            }
-            else if (c == 4)
-            {
-                MessageBox.Show("Remover");
-            }
-            else
-            {
-                MessageBox.Show(r.ToString());
+                var v = DgvContent.Rows[r].Cells[c].Value;
+                Classes.Data.selected_id = r;
+
+                if (c == 1)
+                {
+                    Classes.Data.Up();
+                    DgvContent_Load();
+                }
+                else if (c == 2)
+                {
+                    Classes.Data.Down();
+                    DgvContent_Load();
+                }
+                else if (c == 5)
+                {
+                    MessageBox.Show("Alterar");
+                }
+                else if (c == 6)
+                {
+                    MessageBox.Show("Remover");
+                }
+                else
+                {
+                    MessageBox.Show("ID: " + r.ToString());
+                }
             }
         }
 
@@ -60,6 +100,11 @@ namespace Content_Pwd
         private void BtnLeave_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Classes.Data.selected_id = -1;
         }
     }
 }

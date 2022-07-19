@@ -38,14 +38,18 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnView = new System.Windows.Forms.Button();
             this.BtnLeave = new System.Windows.Forms.Button();
             this.PicLogo = new System.Windows.Forms.PictureBox();
             this.Column_00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_01 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column_02 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column_03 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column_03 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_04 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column_05 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column_06 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvContent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogo)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +82,9 @@
             this.Column_01,
             this.Column_02,
             this.Column_03,
-            this.Column_04});
+            this.Column_04,
+            this.Column_05,
+            this.Column_06});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,7 +95,7 @@
             this.DgvContent.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvContent.EnableHeadersVisualStyles = false;
             this.DgvContent.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.DgvContent.Location = new System.Drawing.Point(22, 152);
+            this.DgvContent.Location = new System.Drawing.Point(21, 152);
             this.DgvContent.MultiSelect = false;
             this.DgvContent.Name = "DgvContent";
             this.DgvContent.ReadOnly = true;
@@ -138,6 +144,7 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn1.Width = 80;
             // 
             // dataGridViewImageColumn2
@@ -147,6 +154,7 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn2.Width = 80;
             // 
             // dataGridViewImageColumn3
@@ -157,6 +165,24 @@
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn3.Width = 40;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::Content_Pwd.Properties.Resources.Change;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.ReadOnly = true;
+            this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn4.Width = 40;
+            // 
+            // dataGridViewImageColumn5
+            // 
+            this.dataGridViewImageColumn5.HeaderText = "";
+            this.dataGridViewImageColumn5.Image = global::Content_Pwd.Properties.Resources.Delete;
+            this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
+            this.dataGridViewImageColumn5.ReadOnly = true;
+            this.dataGridViewImageColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn5.Width = 40;
             // 
             // BtnView
             // 
@@ -217,12 +243,12 @@
             // 
             // Column_01
             // 
-            this.Column_01.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_01.HeaderText = "Assunto";
+            this.Column_01.HeaderText = "";
+            this.Column_01.Image = global::Content_Pwd.Properties.Resources.Null;
             this.Column_01.Name = "Column_01";
             this.Column_01.ReadOnly = true;
             this.Column_01.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column_01.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column_01.Width = 30;
             // 
             // Column_02
             // 
@@ -230,25 +256,44 @@
             this.Column_02.Image = global::Content_Pwd.Properties.Resources.Null;
             this.Column_02.Name = "Column_02";
             this.Column_02.ReadOnly = true;
+            this.Column_02.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column_02.Width = 30;
             // 
             // Column_03
             // 
-            this.Column_03.HeaderText = "";
-            this.Column_03.Image = global::Content_Pwd.Properties.Resources.Change;
+            this.Column_03.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_03.HeaderText = "Assunto";
             this.Column_03.Name = "Column_03";
             this.Column_03.ReadOnly = true;
-            this.Column_03.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_03.Width = 40;
+            this.Column_03.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_03.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column_04
             // 
             this.Column_04.HeaderText = "";
-            this.Column_04.Image = global::Content_Pwd.Properties.Resources.Delete;
+            this.Column_04.Image = global::Content_Pwd.Properties.Resources.Null;
             this.Column_04.Name = "Column_04";
             this.Column_04.ReadOnly = true;
-            this.Column_04.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_04.Width = 40;
+            this.Column_04.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_04.Width = 30;
+            // 
+            // Column_05
+            // 
+            this.Column_05.HeaderText = "";
+            this.Column_05.Image = global::Content_Pwd.Properties.Resources.Change;
+            this.Column_05.Name = "Column_05";
+            this.Column_05.ReadOnly = true;
+            this.Column_05.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_05.Width = 40;
+            // 
+            // Column_06
+            // 
+            this.Column_06.HeaderText = "";
+            this.Column_06.Image = global::Content_Pwd.Properties.Resources.Delete;
+            this.Column_06.Name = "Column_06";
+            this.Column_06.ReadOnly = true;
+            this.Column_06.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column_06.Width = 40;
             // 
             // FrmRead
             // 
@@ -284,10 +329,14 @@
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Button BtnView;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_00;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_01;
+        private System.Windows.Forms.DataGridViewImageColumn Column_01;
         private System.Windows.Forms.DataGridViewImageColumn Column_02;
-        private System.Windows.Forms.DataGridViewImageColumn Column_03;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_03;
         private System.Windows.Forms.DataGridViewImageColumn Column_04;
+        private System.Windows.Forms.DataGridViewImageColumn Column_05;
+        private System.Windows.Forms.DataGridViewImageColumn Column_06;
     }
 }

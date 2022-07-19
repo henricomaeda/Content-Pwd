@@ -7,6 +7,44 @@ namespace Content_Pwd.Classes
 {
     internal class Data
     {
+        public static int selected_id = -1;
+
+        public static void Up()
+        {
+            if (selected_id > 0)
+            {
+                var s = Database.subject[selected_id - 1];
+                var c = Database.content[selected_id - 1];
+                var p = Database.password[selected_id - 1];
+
+                Database.subject[selected_id - 1] = Database.subject[selected_id];
+                Database.content[selected_id - 1] = Database.content[selected_id];
+                Database.password[selected_id - 1] = Database.password[selected_id];
+
+                Database.subject[selected_id] = s;
+                Database.content[selected_id] = c;
+                Database.password[selected_id] = p;
+            }
+        }
+
+        public static void Down()
+        {
+            if (selected_id > -1 && selected_id != (Database.id.Length - 1))
+            {
+                var s = Database.subject[selected_id + 1];
+                var c = Database.content[selected_id + 1];
+                var p = Database.password[selected_id + 1];
+
+                Database.subject[selected_id + 1] = Database.subject[selected_id];
+                Database.content[selected_id + 1] = Database.content[selected_id];
+                Database.password[selected_id + 1] = Database.password[selected_id];
+
+                Database.subject[selected_id] = s;
+                Database.content[selected_id] = c;
+                Database.password[selected_id] = p;
+            }
+        }
+
         public static string Encrypt(string s)
         {
             try

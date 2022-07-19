@@ -12,11 +12,14 @@ namespace Content_Pwd
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            Classes.Database.Load();
             PicLogo.Select();
         }
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
+            Classes.Data.selected_id = -1;
+
             PicLogo.Select();
             FrmCreate frmCreate = new FrmCreate();
             frmCreate.ShowDialog();

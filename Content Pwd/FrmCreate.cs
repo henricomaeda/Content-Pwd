@@ -13,13 +13,12 @@ namespace Content_Pwd
 
         private void FrmCreate_Load(object sender, EventArgs e)
         {
-            var i = Classes.Database.selected_id;
-            if (i != -1)
+            if (Classes.Data.selected_id != -1)
             {
-                TxtSubject.Text = Classes.Database.subject[i];
-                TxtContent.Text = Classes.Database.content[i];
+                TxtSubject.Text = Classes.Database.subject[Classes.Data.selected_id];
+                TxtContent.Text = Classes.Database.content[Classes.Data.selected_id];
 
-                var p = Classes.Database.password[i];
+                var p = Classes.Database.password[Classes.Data.selected_id];
                 if (!string.IsNullOrWhiteSpace(p))
                 {
                     TxtPassword.Text = p;
@@ -101,7 +100,7 @@ namespace Content_Pwd
                     }
                     else if (sender == BtnRead)
                     {
-                        Classes.Database.Update(Classes.Database.selected_id, s, co, p);
+                        Classes.Database.Update(Classes.Data.selected_id, s, co, p);
 
                         t = "O conteúdo foi atualizado com sucesso!\n\nAssunto: " + s;
                         i = MessageBoxIcon.Information;

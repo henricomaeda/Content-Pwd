@@ -142,5 +142,17 @@
   <ItemGroup>
     <None Include="Resources\Null.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disabled_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disabled_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
