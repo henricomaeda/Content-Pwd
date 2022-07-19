@@ -59,16 +59,8 @@ namespace Content_Pwd
         private void BtnView_Click(object sender, EventArgs e)
         {
             PicLogo.Select();
-            if (TxtPassword.UseSystemPasswordChar)
-            {
-                TxtPassword.UseSystemPasswordChar = false;
-                BtnView.Text = "Esconder";
-            }
-            else
-            {
-                TxtPassword.UseSystemPasswordChar = true;
-                BtnView.Text = "Revelar";
-            }
+            if (TxtPassword.UseSystemPasswordChar) TxtPassword.UseSystemPasswordChar = false;
+            else TxtPassword.UseSystemPasswordChar = true;
         }
 
         private void BtnCreateAndRead_Click(object sender, EventArgs e)

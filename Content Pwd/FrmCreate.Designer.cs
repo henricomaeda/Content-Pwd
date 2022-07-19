@@ -53,7 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblSubject.AutoSize = true;
             this.LblSubject.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSubject.Location = new System.Drawing.Point(19, 125);
+            this.LblSubject.Location = new System.Drawing.Point(18, 134);
             this.LblSubject.Name = "LblSubject";
             this.LblSubject.Size = new System.Drawing.Size(73, 19);
             this.LblSubject.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.TxtSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtSubject.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSubject.Location = new System.Drawing.Point(22, 146);
+            this.TxtSubject.Location = new System.Drawing.Point(21, 155);
             this.TxtSubject.Name = "TxtSubject";
             this.TxtSubject.Size = new System.Drawing.Size(793, 26);
             this.TxtSubject.TabIndex = 2;
@@ -75,10 +75,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtContent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtContent.Location = new System.Drawing.Point(22, 205);
+            this.TxtContent.Location = new System.Drawing.Point(21, 215);
             this.TxtContent.Multiline = true;
             this.TxtContent.Name = "TxtContent";
-            this.TxtContent.Size = new System.Drawing.Size(793, 224);
+            this.TxtContent.Size = new System.Drawing.Size(793, 251);
             this.TxtContent.TabIndex = 4;
             // 
             // LblContent
@@ -87,7 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblContent.AutoSize = true;
             this.LblContent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContent.Location = new System.Drawing.Point(19, 184);
+            this.LblContent.Location = new System.Drawing.Point(18, 193);
             this.LblContent.Name = "LblContent";
             this.LblContent.Size = new System.Drawing.Size(85, 19);
             this.LblContent.TabIndex = 3;
@@ -98,9 +98,9 @@
             this.TxtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(22, 468);
+            this.TxtPassword.Location = new System.Drawing.Point(21, 502);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(591, 26);
+            this.TxtPassword.Size = new System.Drawing.Size(699, 26);
             this.TxtPassword.TabIndex = 6;
             this.TxtPassword.UseSystemPasswordChar = true;
             this.TxtPassword.GotFocus += new System.EventHandler(this.TxtPassword_GotFocus);
@@ -112,7 +112,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblPassword.AutoSize = true;
             this.LblPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPassword.Location = new System.Drawing.Point(19, 447);
+            this.LblPassword.Location = new System.Drawing.Point(18, 481);
             this.LblPassword.Name = "LblPassword";
             this.LblPassword.Size = new System.Drawing.Size(159, 19);
             this.LblPassword.TabIndex = 5;
@@ -127,7 +127,7 @@
             this.LblPlaceholder.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LblPlaceholder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPlaceholder.ForeColor = System.Drawing.Color.Gray;
-            this.LblPlaceholder.Location = new System.Drawing.Point(25, 472);
+            this.LblPlaceholder.Location = new System.Drawing.Point(24, 506);
             this.LblPlaceholder.Name = "LblPlaceholder";
             this.LblPlaceholder.Size = new System.Drawing.Size(355, 18);
             this.LblPlaceholder.TabIndex = 11;
@@ -141,7 +141,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(89, 124);
+            this.label1.Location = new System.Drawing.Point(88, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(15, 19);
             this.label1.TabIndex = 12;
@@ -154,7 +154,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(101, 183);
+            this.label2.Location = new System.Drawing.Point(100, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 19);
             this.label2.TabIndex = 13;
@@ -168,7 +168,7 @@
             this.BtnGenerate.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGenerate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BtnGenerate.Image = global::Content_Pwd.Properties.Resources.Generate;
-            this.BtnGenerate.Location = new System.Drawing.Point(619, 447);
+            this.BtnGenerate.Location = new System.Drawing.Point(726, 481);
             this.BtnGenerate.Name = "BtnGenerate";
             this.BtnGenerate.Size = new System.Drawing.Size(34, 47);
             this.BtnGenerate.TabIndex = 14;
@@ -183,7 +183,7 @@
             this.BtnLeave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnLeave.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLeave.Image = global::Content_Pwd.Properties.Resources.Leave;
-            this.BtnLeave.Location = new System.Drawing.Point(22, 512);
+            this.BtnLeave.Location = new System.Drawing.Point(21, 546);
             this.BtnLeave.Name = "BtnLeave";
             this.BtnLeave.Size = new System.Drawing.Size(237, 76);
             this.BtnLeave.TabIndex = 10;
@@ -200,7 +200,7 @@
             this.BtnRead.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnRead.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRead.Image = global::Content_Pwd.Properties.Resources.Update;
-            this.BtnRead.Location = new System.Drawing.Point(274, 512);
+            this.BtnRead.Location = new System.Drawing.Point(273, 546);
             this.BtnRead.Name = "BtnRead";
             this.BtnRead.Size = new System.Drawing.Size(238, 76);
             this.BtnRead.TabIndex = 9;
@@ -219,7 +219,7 @@
             this.BtnCreate.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCreate.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnCreate.Image = global::Content_Pwd.Properties.Resources.Create;
-            this.BtnCreate.Location = new System.Drawing.Point(528, 512);
+            this.BtnCreate.Location = new System.Drawing.Point(527, 546);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(287, 76);
             this.BtnCreate.TabIndex = 8;
@@ -237,11 +237,10 @@
             this.BtnView.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnView.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BtnView.Image = global::Content_Pwd.Properties.Resources.View;
-            this.BtnView.Location = new System.Drawing.Point(659, 447);
+            this.BtnView.Location = new System.Drawing.Point(766, 481);
             this.BtnView.Name = "BtnView";
-            this.BtnView.Size = new System.Drawing.Size(156, 47);
+            this.BtnView.Size = new System.Drawing.Size(48, 47);
             this.BtnView.TabIndex = 7;
-            this.BtnView.Text = "Revelar";
             this.BtnView.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnView.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnView.UseVisualStyleBackColor = false;
@@ -254,7 +253,7 @@
             this.PicLogo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PicLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PicLogo.Image = global::Content_Pwd.Properties.Resources.Logo;
-            this.PicLogo.Location = new System.Drawing.Point(22, 12);
+            this.PicLogo.Location = new System.Drawing.Point(22, 22);
             this.PicLogo.Name = "PicLogo";
             this.PicLogo.Size = new System.Drawing.Size(793, 100);
             this.PicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -265,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 609);
+            this.ClientSize = new System.Drawing.Size(834, 643);
             this.Controls.Add(this.BtnGenerate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

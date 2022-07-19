@@ -103,7 +103,9 @@
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Content_Delete.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\View.png" />
   </ItemGroup>
@@ -121,6 +123,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Generate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Content_Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Null.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

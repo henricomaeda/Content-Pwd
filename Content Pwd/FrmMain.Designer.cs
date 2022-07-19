@@ -42,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnLeave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnLeave.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLeave.Image = global::Content_Pwd.Properties.Resources.Leave;
+            this.BtnLeave.Image = global::Content_Pwd.Properties.Resources.Close;
             this.BtnLeave.Location = new System.Drawing.Point(21, 338);
             this.BtnLeave.Name = "BtnLeave";
             this.BtnLeave.Size = new System.Drawing.Size(229, 94);
