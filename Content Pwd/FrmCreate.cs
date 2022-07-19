@@ -29,6 +29,7 @@ namespace Content_Pwd
                 BtnUpdate.Enabled = true;
                 BtnCreate.Enabled = false;
                 BtnCreate.BackColor = Color.Gray;
+                this.Text = "Atualizar anotação";
             }
         }
 
