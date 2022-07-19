@@ -77,6 +77,7 @@ namespace Content_Pwd
             var s = TxtSubject.Text;
             var co = TxtContent.Text;
             var p = TxtPassword.Text;
+            var v = true;
 
             PicLogo.Select();
             if (string.IsNullOrWhiteSpace(p)) p = string.Empty;
@@ -105,10 +106,21 @@ namespace Content_Pwd
                     }
                     else if (sender == BtnUpdate)
                     {
-                        Classes.Database.Update(s, co, p);
 
-                        t = "O conteúdo foi atualizado com sucesso!\n\nAssunto: " + s;
-                        i = MessageBoxIcon.Information;
+                        t = "Você tem certeza que deseja atualizar o conteúdo?";
+                        b = MessageBoxButtons.YesNo;
+                        i = MessageBoxIcon.Question;
+
+                        DialogResult re = MessageBox.Show(t, c, b, i);
+                        if (re == DialogResult.Yes)
+                        {
+                            Classes.Database.Update(s, co, p);
+
+                            t = "O conteúdo foi atualizado com sucesso!\n\nAssunto: " + s;
+                            b = MessageBoxButtons.OK;
+                            i = MessageBoxIcon.Information;
+                        }
+                        else v = false;
                     }
 
                     if (p == string.Empty) t += "\nNenhuma senha inserida.";
@@ -132,8 +144,11 @@ namespace Content_Pwd
                 }
                 finally
                 {
-                    MessageBox.Show(t, c, b, i);
-                    BtnLeave_Click(sender, e);
+                    if (v == true)
+                    {
+                        MessageBox.Show(t, c, b, i);
+                        BtnLeave_Click(sender, e);
+                    }
                 }
             }
         }

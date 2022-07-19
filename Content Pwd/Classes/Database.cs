@@ -1,9 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Content_Pwd.Classes
 {
@@ -26,11 +23,11 @@ namespace Content_Pwd.Classes
 
                 for (int i = 0; i < id.Length; i++)
                 {
-                    var s = Data.Encrypt(subject[i]);
-                    var c = Data.Encrypt(content[i]);
-                    var p = Data.Encrypt(password[i]);
+                    string s = Data.Encrypt(subject[i]);
+                    string c = Data.Encrypt(content[i]);
+                    string p = Data.Encrypt(password[i]);
 
-                    var encrypted = Data.Encrypt(s + '|' + c + '|' + p);
+                    string encrypted = Data.Encrypt(s + '|' + c + '|' + p);
 
                     w.WriteLine(encrypted);
                 }
@@ -145,7 +142,7 @@ namespace Content_Pwd.Classes
                     if (i != Data.selected_id)
                     {
                         id_list.Add(id_list.Count);
-                        content_list.Add(subject[i]);
+                        subject_list.Add(subject[i]);
                         content_list.Add(content[i]);
                         password_list.Add(password[i]);
                     }
