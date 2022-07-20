@@ -22,6 +22,7 @@ namespace Content_Pwd
                 var p = Classes.Database.password[Classes.Data.selected_id];
                 if (!string.IsNullOrWhiteSpace(p))
                 {
+                    LblPlaceholder.Visible = false;
                     TxtPassword.Text = p;
                     PicLogo.Select();
                 }
@@ -29,7 +30,7 @@ namespace Content_Pwd
                 BtnUpdate.Enabled = true;
                 BtnCreate.Enabled = false;
                 BtnCreate.BackColor = Color.Gray;
-                this.Text = "Atualizar anotação";
+                Text = "Atualizar anotação";
             }
         }
 

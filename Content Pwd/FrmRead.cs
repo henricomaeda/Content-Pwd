@@ -127,7 +127,7 @@ namespace Content_Pwd
                     }
                     else if (DgvContent_Verify(p) == 1)
                     {
-                        t = "Por favor, entre com uma senha no campo abaixo.";
+                        t = "Este conteúdo é protegido por senha.\n\nPor favor, entre com uma senha no campo abaixo.";
                         b = MessageBoxButtons.OK;
                         i = MessageBoxIcon.Warning;
 
